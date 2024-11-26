@@ -41,11 +41,6 @@ Desc:  project do in class
 
 
 
-
-
-
-
-
 -- Suppression de la base de données si elle existe
 DROP DATABASE IF EXISTS bibliotheques_db;
 -- Création de la base de données
@@ -137,3 +132,15 @@ ON UPDATE RESTRICT
 ON DELETE CASCADE;
 
 -------------------------
+
+
+ALTER TABLE clients
+MODIFY nom VARCHAR(100);
+MODIFY prenom VARCHAR(100);
+
+-----------------------------------
+ALTER TABLE articles
+MODIFY ADD UNIQUE (titre);
+------------------------------------
+ALTER TABLE articles
+MODIFY description NOT NULL;
